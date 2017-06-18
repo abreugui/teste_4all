@@ -2,13 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/main.less'
 
-import WidgetsList from './Components/WidgetsList';
-import Graph from './Components/Graph';
+import App from './components/App.js';
 
-ReactDOM.render(
-  <div>
-    <WidgetsList />
-    <Graph />
-  </div>  
-  , document.getElementById('app')
-);
+ReactDOM.render(<App/>, document.getElementById('app'));

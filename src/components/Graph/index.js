@@ -1,16 +1,58 @@
 import React from 'react';
-import LineChart from 'react-chartjs';
+import Request from '../../Services';
+var LineChart = require("react-chartjs").Line;
+
+import './Graph.less';
 
 class Graph extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    render() {
-        return (
-            <div>
-                <LineChart data={12, 10, 8, 14, 3, 7} options={"Red", "Blue", "Yellow", "Green", "Purple", 
-                "Orange"} width="600" height="250" />
-            </div>
-        );
-    }
+  constructor(props){
+      super(props);
+      this.state = {
+        data: []
+      }
+
+      this.getLabels = this.getLabels.bind(this);
+      this.getValues = this.getValues.bind(this);
+  }
+  componentDidMount() {
+    Request.getGraphData()
+    .then((res) => {
+      this.setState({ data: res.data })
+    })
+    .catch((err) => {
+      console.log(err.data);
+    });
+  }
+  getLabels(item) {
+    return item.month;
+  }
+  getValues(item) {
+    return item.views;
+  }
+  render() {
+
+    let labels = this.state.data.map(this.getLabels);
+    let values = this.state.data.map(this.getValues);
+
+    let data = {
+        labels: labels,
+        datasets: [{ data: values }]
+    };
+    let options = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    };
+    return (
+      <div className="graph">
+        <LineChart data={data} options={options} width="1024" height="250" redraw />
+      </div>
+    );
+  }
 }
+
+export default Graph;

@@ -28,15 +28,12 @@ class WidgetsList extends React.Component {
   render() {
     console.log('state', this.state.data);
     return (
-      <div className="list">
-
-        <h2 className="namedash">Dashboard</h2>
-        
+      <div className="list">        
         <div className="wid1">
           <div className="corblue"><div className="icon"><FaShoppingBag className="iconsize"/></div></div>
           <div className="fundoWidget">
             <Widgets name="Comments" number={this.state.data.comments}/>
-          </div> 
+          </div>
         </div>
         <div className="wid2">
           <div className="coryellow"><div className="icon"><FaCommentO className="iconsize"/></div></div>
