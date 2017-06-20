@@ -26,12 +26,8 @@ class App extends React.Component {
           <p className="headMessage"><i className="iconSize"><FaCommentsO /></i> Chat </p>
           <hr/>
           <MessageList />
-          <div className="footerMessage">
-            <input type="text" placeholder="Type your message here..." className="inputChat"/>
-            <button className="buttonChat">Send</button>
-          </div>
         </div>
-          
+
       </div>
     );
   }

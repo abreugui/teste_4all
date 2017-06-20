@@ -1,7 +1,7 @@
 import React from 'react';
 import './Message.less';
 
-let imagem = require('../../img/img.png');
+// let imagem = require('../../img/img.png');
 
 class Message extends React.Component{
     constructor(props){
@@ -11,7 +11,11 @@ class Message extends React.Component{
         if (this.props.isLeft) {
          return(
             <li className="clearfix">
-                <img src={imagem} alt="" className="foto"/>
+                {(this.props.portrait) ? (
+                  <img src={this.props.portrait} alt="" className="foto"/>
+                ): (
+                  <div className="avatar"></div>
+                )}
                 <div className="chat-body">
                     <div className="header">
                         <strong className="nome">{this.props.userName}</strong>
@@ -20,7 +24,7 @@ class Message extends React.Component{
                     <p className="mensagem">{this.props.message}</p>
                 </div>
             </li>
-        );   
+        );
         } else {
             return(
             <li className="clearfix right">
@@ -31,7 +35,11 @@ class Message extends React.Component{
                     </div>
                     <p className="mensagem">{this.props.message}</p>
                 </div>
-                <img src={imagem} alt="" className="foto right"/>
+                {(this.props.portrait) ? (
+                  <img src={this.props.portrait} alt="" className="foto right"/>
+                ): (
+                  <div className="avatar"></div>
+                )}
             </li>
         );
         }
