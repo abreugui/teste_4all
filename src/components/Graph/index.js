@@ -10,7 +10,6 @@ class Graph extends React.Component {
       this.state = {
         data: []
       }
-
       this.getLabels = this.getLabels.bind(this);
       this.getValues = this.getValues.bind(this);
   }
@@ -49,7 +48,7 @@ class Graph extends React.Component {
     };
     return (
       <div className="graph">
-        <LineChart data={data} options={options} width="1024" height="250" redraw />
+        <LineChart data={data} options={options} width="1300" height="400" />
       </div>
     );
   }

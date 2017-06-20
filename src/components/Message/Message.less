@@ -1,0 +1,26 @@
+@cinza: #756164;
+
+li {
+    height: 100px;
+    .foto{
+        height: 80px;
+        width: 80px;
+        float: left;
+        &.right {
+            float: right !important;
+        }
+    }
+    .tempo{
+        margin-left: 5px;
+        
+    }
+    .chat-body{
+        margin-left: 100px;
+    }
+    &.right {
+        .chat-body {
+            margin-left: 0px; 
+            float: left;
+        }
+    }
+}

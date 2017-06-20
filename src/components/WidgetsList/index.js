@@ -30,25 +30,25 @@ class WidgetsList extends React.Component {
     return (
       <div className="list">
         <div className="wid wid1">
-          <div className="corblue"><div className="icon"><FaShoppingBag className="iconsize"/></div></div>
+          <div className="corblue corall"><div className="icon"><FaShoppingBag className="iconsize"/></div></div>
           <div className="fundoWidget">
             <Widgets name="Comments" number={this.state.data.comments}/>
           </div>
         </div>
         <div className="wid wid2">
-          <div className="coryellow"><div className="icon"><FaCommentO className="iconsize"/></div></div>
+          <div className="coryellow corall"><div className="icon"><FaCommentO className="iconsize"/></div></div>
           <div className="fundoWidget">
           <Widgets name="New Orders" number={this.state.data.newOrders}/>
           </div>
         </div>
         <div className="wid wid3">
-          <div className="corgreen"><div className="icon"><FaGroup className="iconsize"/></div></div>
+          <div className="corgreen corall"><div className="icon"><FaGroup className="iconsize"/></div></div>
           <div className="fundoWidget">
           <Widgets name="NewUsers" number={this.state.data.newUsers}/>
         </div>
         </div>
         <div className="wid wid4">
-          <div className="corred"><div className="icon"><FaTasks className="iconsize"/></div></div>
+          <div className="corred corall"><div className="icon"><FaTasks className="iconsize"/></div></div>
           <div className="fundoWidget">
           <Widgets name="Page Views" number={this.state.data.pageViews}/>
         </div>
